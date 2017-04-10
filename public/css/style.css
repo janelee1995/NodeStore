@@ -1,0 +1,139 @@
+body {
+
+background-color:#F2E9D8;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+#bodyid{
+  background-color:#F2F2F7;
+}
+a {
+  color: #00B7FF;
+}
+
+#body-home{
+  background-image:url('localhost:3007/public/images/landing-page-2.jpg');
+}
+
+#search{
+  color:white;
+}
+
+#container{
+  padding-top:3%;
+  padding-left:30%;
+  border:solid black 2px;
+  width:100%;
+  float:left;
+  background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center ;
+  height:40%;
+  background-image:url('/images/macbook-background.jpg');
+
+}
+
+#form-container{
+  width:50%;
+  margin-left: 25%;
+  background-color:grey;
+  padding:1%;
+}
+
+#categories{
+
+  float:left;
+  width:20%;
+  margin-left:20%;
+
+
+}
+#categories ul{
+
+margin:0%;
+}
+
+#userList{
+    float:left;
+    width:38%;
+
+}
+#paymentsList{
+  width:35%;
+  float:left;
+
+
+margin-left:2%;
+}
+#productList{
+  width:60%;
+  padding:0% 5% 0% 5%;
+  height:auto;
+  float:right;
+}
+
+
+
+#userInfo{
+    float:left;
+    width:30%;
+
+    margin-left: 2%;
+}
+
+#panelHeading1{
+  text-decoration: underline;
+  font-size:20px;
+}
+
+#headingp{
+  background-color:#8D95A3;
+  font-color:white;
+
+}
+#panelp{
+
+  background-color:#F3F3F3;
+
+}
+
+#new_product{
+  float:right;
+  margin-top:2%;
+  font-size:25px;
+}
+#infoPanel{
+  margin-left:1%;
+}
+#custom-search-input .search-query {
+
+
+}
+
+
+
+.linkshowuser{
+color:white;
+text-decoration: underline;
+}
+
+.thumbnail-image{
+  width:30%;
+  height:30%;
+  float:right;
+  padding:1%;
+
+  position:relative;
+}
+
+
+
+.price{
+  float:right;
+  color:white;
+}
+
+.links{
+  float:left;
+  margin-top:auto;
+  margin-right:1%;
+}

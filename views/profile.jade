@@ -1,0 +1,89 @@
+extends layout
+
+block content
+
+
+  
+  #userInfo
+    h2 Welcome #{firstname}
+    .panel.panel-default
+      #panelHeading1.panel-heading Account Information    
+      #panelBody1.panel-body
+      li Name: #{firstname} #{lastname} 
+      li Email: #{email} 
+      li Username: #{username} 
+      br
+      
+    
+      
+      
+  #productList
+    a(href="/new" id ="new_product") New
+    h1= title
+    
+    - products.forEach(function(v,i){
+    .panel.panel-default
+      #headingp.panel-heading <a href="#" class="linkshowuser" rel="#{v.name}">#{v.name}</a> <div class = "price">€#{v.price} </div>
+      img(class='thumbnail-image', src= v.imageURL)
+      #panelp.panel-body #{v.description}
+        br
+        a(href="/edit/"+v._id class = "links") Edit
+        | 
+        a(href="/delete/"+v._id class = "links") Delete
+    
+    - });
+    
+  #paymentsList
+    h2. Items you purchased
+    table.table.table-striped
+      thead
+        tr
+          th Product Name
+          th Amount
+          th Paid By
+          th Product Owner
+          th Date
+
+      tbody
+  
+      - payment.forEach(function(v,i){
+      tr
+        td #{v.name}
+        td €#{v.amount}
+        td #{v.paidby}
+        td #{v.productOwner}
+        td #{v.date}
+      - });
+  #paymentsList
+    h2. Items purchased from you
+    table.table.table-striped
+      thead
+        tr
+          th Product Name
+          th Amount
+          th Paid By
+          th Product Owner
+          th Date
+
+      tbody
+  
+      - payment2.forEach(function(v,i){
+      tr
+        td #{v.name}
+        td €#{v.amount}
+        td #{v.paidby}
+        td #{v.productOwner}
+        td #{v.date}
+      - });
+          
+        
+        
+      
+      
+
+          
+
+    
+
+          
+                  

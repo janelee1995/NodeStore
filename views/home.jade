@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  #productList
+    a(href="/new" id ="new_product") New
+    h1= title  
+      - products.forEach(function(v,i){
+        .panel.panel-default
+          #headingp.panel-heading <a href="#" class="linkshowuser" rel="#{v.name}">#{v.name}</a> <div class = "price">€#{v.price} </div>
+          #panelp.panel-body #{v.description}
+            br
+            //img(class='thumbnail-image', src='https://imagem.biz/wp-content/uploads/2015/05/mesa-com-detalhes.jpg')
+            img(class='thumbnail-image', src= v.imageURL)
+            br
+            a(href="/edit/"+v._id class = "links") Edit
+            | 
+            a(href="/delete/"+v._id class = "links") Delete
+      
+        
+        
+      - });
+  
+  #userList
+    .container
+    h2 Panel Heading
+    .panel.panel-default
+      #panelHeading1.panel-heading 
+      #panelBody1.panel-body 
+
+          
+                  

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+  #paymentsList
+    h2. Items Purchased from you
+    table.table.table-striped
+          thead
+            tr
+              th Product Name
+              th Amount
+              th Paid By
+              th Product Owner
+
+          tbody
+      
+          - payment.forEach(function(v,i){
+          tr
+            td #{v.name}
+            td €#{v.amount}
+            td #{v.paidby}
+            td #{v.productOwner}
+          - });
+          
+      
+          
+        
+          

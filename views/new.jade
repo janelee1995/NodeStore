@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+      #form-container
+        h1= title
+        
+        form(action='',method='post')
+          .form-group
+            // Name field
+            label.control-label(for='name') Name
+            input#name.form-control(required='true',name='name', type='text')
+          .form-group
+            // Email field
+            label.control-label.requiredField(for='description')
+              | Description
+            input#description.form-control(required='true',name='description', type='text')
+          .form-group
+            // Subject field
+            label.control-label(for='price') Price
+            input#price.form-control(required='true',name='price', type='text')
+          .form-group
+              // Email field
+              label.control-label.requiredField(for='imageURL')
+                | imageURL
+              input#imageURL.form-control(name='imageURL', type='text')
+            input(type='submit', value='Save')
+        

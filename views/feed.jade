@@ -1,0 +1,46 @@
+extends layout
+block content
+    #container
+      .col-md-12 
+        h2#search Search Products By Name
+        #custom-search-input
+          .input-group.col-md-7
+            input#searchbar.search-query.form-control(type='text', placeholder='Search')
+            span.input-group-btn
+              button#search-button.btn.btn-danger(type='button')
+                span.glyphicon.glyphicon-search
+
+
+    #productList    
+      - products.forEach(function(v,i){
+      
+                .panel.panel-default
+                  #headingp.panel-heading <a href="#" class="linkshowuser" rel="#{v.name}">#{v.name}</a> <div class = "price">€#{v.price} </div>
+                  img(class='thumbnail-image', src= v.imageURL)
+                  #panelp.panel-body #{v.description} 
+                    br
+                    br
+                    span Category:<a href="#" rel="#{v.category}">  #{v.category}</a> 
+                    br
+                    br
+                    
+                    form(action='/charge', method='post')
+                      script.stripe-button(src='https://checkout.stripe.com/checkout.js', data-key='pk_test_KndosG2x8wasFooBv7Q77LPH', data-amount=v.price, data-name=v.name, data-description=v.description, data-currency='eur')
+                      input(type='hidden', value=v.price, name='chargeAmount')
+                      input(type='hidden', value=v.name, name='name')
+                      input(type='hidden', value=v.description, name='description')
+                      input(type='hidden', value=v.username, name='owner')
+                
+                
+      - });
+              
+    #categories
+      h2 Categories
+      - categories.forEach(function(v,i){
+        ul.list-group
+          li.list-group-item <a href="/filterByCategory/#{v.name}" rel="#{v.name}">#{v.name}</a> 
+
+      - });
+                  
+                  
+  
